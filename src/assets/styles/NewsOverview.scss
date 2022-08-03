@@ -1,0 +1,23 @@
+.media-contact-container {
+  background: var(--primary-200);
+  text-align: center;
+  padding: 1em;
+  width: 17em;
+  border-radius: var(--rad1);
+}
+
+.media-contact-container > h6 {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.media-contact {
+  display: flex;
+  gap: 4em;
+  justify-content: center;
+}
+
+#media-contact-section {
+  //   margin-block: 2em;
+  padding-block: 1em;
+}

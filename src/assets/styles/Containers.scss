@@ -1,0 +1,134 @@
+.content-container {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-block: 1em;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1em;
+  padding: 1em;
+  flex: 0 0 calc(50% - 1.5em);
+  background-color: var(--white-400);
+  border-radius: var(--rad1);
+  box-shadow: 3px 4px 5px 1px rgba(0, 0, 0, 0.05);
+
+  .news-bottom {
+    display: flex;
+    place-items: center;
+    gap: 1em;
+    font-size: 0.9rem;
+    color: var(--black-100);
+    max-height: 2em;
+  }
+
+  .headline {
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--primary-400);
+  }
+}
+
+.press-container {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .news-icon {
+    position: absolute;
+    font-size: 5em;
+    opacity: 0.05;
+    left: -6%;
+    bottom: -15%;
+    color: var(--black);
+  }
+
+  .date {
+    margin-left: auto;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: 1em;
+      background-color: var(--white-100);
+      position: absolute;
+      top: 50%;
+      left: -1.5em;
+    }
+  }
+
+  .headline {
+    display: block;
+    color: var(--black);
+    background-color: var(--white-400);
+  }
+}
+
+$moveSize: 0.45em;
+$title-height: 3em;
+
+.media-container {
+  flex: 0 0 calc(33.3% - 1.4em);
+  display: grid;
+  grid-template-rows: auto $title-height;
+  place-items: center;
+  background-color: var(--white-200);
+  gap: 0.75em;
+  padding-bottom: 0.7em;
+  border-radius: var(--rad1);
+
+  p {
+    text-align: center;
+    font-weight: 500;
+    max-height: var(--title-height);
+    overflow: hidden;
+  }
+
+  .front {
+    z-index: 3;
+    transform: translateX(calc($moveSize * -1)) translateY($moveSize);
+  }
+
+  .back-1 {
+    z-index: 2;
+    opacity: 0.7;
+  }
+
+  .back-2 {
+    z-index: 1;
+    transform: translateX($moveSize) translateY(calc($moveSize * -1));
+    opacity: 0.5;
+  }
+}
+
+.image-container {
+  padding: calc($moveSize * 2 + 0.5em);
+  padding-bottom: 0.5em;
+  grid-template-rows: auto 3rem 2rem;
+
+  .media {
+    margin-bottom: $moveSize;
+  }
+
+  .media-bottom {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .media-container {
+    flex: 0 0 calc(50% - 1em);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .news-container,
+  .media-container {
+    flex: 0 0 100%;
+  }
+}

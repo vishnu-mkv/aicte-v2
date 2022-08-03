@@ -1,0 +1,30 @@
+.paginations {
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+
+  .nav-button {
+    border-radius: var(--rad1);
+  }
+
+  .number.nav-button {
+    padding: 0.5em 0.75em;
+    background: none;
+    border: 1px solid var(--white-100);
+    color: var(--black);
+  }
+
+  .number.active {
+    background: var(--primary-300);
+    border: none;
+    color: var(--white);
+  }
+
+  .page-button {
+    padding: 0.2em 0.4em;
+  }
+}
+
+.pages-container {
+  padding-block: 1em;
+}

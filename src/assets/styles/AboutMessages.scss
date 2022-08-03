@@ -1,0 +1,53 @@
+#about-messages {
+  #content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin-block: 3em;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+    text-align: right;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  #right {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  #bottom {
+    text-align: right;
+    font-weight: 350;
+  }
+
+  #right h2 {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 700px) {
+    #right {
+      grid-area: right;
+    }
+
+    #left {
+      grid-area: left;
+    }
+
+    #content-container {
+      grid-template-areas: "right right" "left left";
+    }
+
+    .quote,
+    #bottom {
+      text-align: left;
+    }
+
+    #right .sub-title.right {
+      margin-inline: 0 auto;
+    }
+  }
+}
